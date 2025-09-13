@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Onboarding Form",
   description:
-    "A simple onboarding form app using Next.js 15 with Server Actions, Tailwind CSS, React-Hook-Form, Zod and Radix-UI",
+    "A simple onboarding form app using Next.js 15 with Server Actions, Tailwind CSS, React-Hook-Form, Zod and Radix-UI, Vitest",
 };
 
 export default function RootLayout({
