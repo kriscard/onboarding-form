@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import {
   type OnboardingSchemaType,
   OnboardingSchema,
@@ -17,8 +18,6 @@ export async function createUser(
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const result = OnboardingSchema.safeParse(data);
-
-  console.log("data", data);
 
   if (!result.success) {
     const errorMessages = result.error.issues.reduce((prev, issue) => {
@@ -56,6 +55,8 @@ export async function createUser(
         error: "Failed to create user",
       };
     }
+
+    revalidatePath("/");
 
     return {
       success: true,

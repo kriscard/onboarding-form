@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { CorporationSchema } from "../validations/onboarding";
 
 export interface CorporationValidationResult {
@@ -46,6 +47,8 @@ export async function validateCorporationNumber(
     }
 
     const data = await response.json();
+
+    revalidatePath("/");
 
     return {
       valid: data.valid === true,
