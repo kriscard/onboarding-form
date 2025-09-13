@@ -54,7 +54,7 @@ export function OnboardingForm() {
       >
         <Card className="w-full max-w-md mx-4">
           <Box className="pb-8">
-            <Heading as="h1" className="text-center font-light text-2xl">
+            <Heading as="h1" className="text-center" weight="light">
               Onboarding Form
             </Heading>
           </Box>
